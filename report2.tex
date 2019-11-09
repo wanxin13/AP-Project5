@@ -1,0 +1,75 @@
+\documentclass{report}
+\include{preamble}
+\usepackage{booktabs}
+
+\title{\LectureTitle: Problem Set 5}
+
+\begin{document}
+\maketitle
+\newpage
+
+\subsection{f}
+The tables below show the time series average, standard error and t-stat of $\gamma_{0}$, $\gamma_{M}$, $\gamma_{size}$, $\gamma_{ret212}$, $\gamma_{SMB}$ and $\gamma_{UMD}$ of three Fama-MacBeth cross-sectional regressions 1, 2, 3 as following.
+\[ (1) \quad R_{i} = \gamma_{0}+\gamma_{M}\beta_{iM}+\gamma_{size}ln(size)+\gamma_{ret212}(ret212)+\eta_{i1}, \]
+\[ (2) \quad R_{i} = \gamma_{0}+\gamma_{M}\beta_{iM}+\gamma_{SMB}\beta_{iSMB}+\gamma_{UMD}\beta_{iUMD}+\eta_{i2}, \]
+\[ (3) \quad R_{i} = \gamma_{0}+\gamma_{M}\beta_{iM}+\gamma_{size}ln(size)+\gamma_{ret212}(ret212)+\gamma_{size}\beta_{iSMB}+\gamma_{UMD}\beta_{iUMD}+\eta_{i3}. \]
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+               & $\bar{\gamma_{0}}$    &  $se(\bar{\gamma_{0}})$   & $t(\bar{\gamma_{0}})$  & $\bar{\gamma_{M}}$     & $se(\bar{\gamma_{M}})$    & $t(\bar{\gamma_{M}})$   \\ \hline
+Regression (1) & 2.4609  & 0.4106 & 5.9926  & -1.1704 & 0.3982 & -2.9391 \\ \hline
+Regression(2)  & 1.7784  & 0.3544 & 5.0180  & -0.6782 & 0.3721 & -1.8225 \\ \hline
+Regression(3)  & 2.9000  & 0.4868 & 5.9572  & -1.0298 & 0.3952 & -2.6056 \\ \hline
+               & $\bar{\gamma_{size}}$    &  $se(\bar{\gamma_{size}})$   & $t(\bar{\gamma_{size}})$  & $\bar{\gamma_{ret212}}$     & $se(\bar{\gamma_{ret212}})$    & $t(\bar{\gamma_{ret212}})$   \\ \hline
+Regression(1)  & -0.1036 & 0.0328 & -3.1614 & 0.0090  & 0.0021 & 4.1892  \\ \hline
+Regression(2)  &         &        &         &         &        &         \\ \hline
+Regression(3)  & -0.0947 & 0.0474 & -1.9957 & 0.0096  & 0.0029 & 3.3423  \\ \hline
+               & $\bar{\gamma_{SMB}}$    &  $se(\bar{\gamma_{SMB}})$   & $t(\bar{\gamma_{SMB}})$  & $\bar{\gamma_{UMD}}$     & $se(\bar{\gamma_{UMD}})$    & $t(\bar{\gamma_{UMD}})$   \\ \hline
+Regression(1)  &         &        &         &         &        &         \\ \hline
+Regression(2)  & 0.4133  & 0.1122 & 3.6829  & 0.6843  & 0.1467 & 4.6640  \\ \hline
+Regression(3)  & 0.0307  & 0.1999 & 0.1537  & 0.0150  & 0.2152 & 0.0699  \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{g}
+By analysing the t-stats of $\gamma$, we think characteristics better capture the cross sectional variation in average returns. In regression (1), the tstat for size character return is -3.1614. Since $|-3.1614|>1.96$, we can reject the hypothesis $\gamma_{size} = 0$ at 5\% significance level, which means size character has a significant negative risk premium on average. Thus, size character captures the cross-sectional variation. Also, the tstat for past 2-to-12-month return  character return is 4.1892. Since $|4.1892|>1.96$, we can reject the hypothesis $\gamma_{ret212} = 0$ at 5\% significance level, which means past 2-to-12-month return characteristic has a significant positive risk premium on average. Thus, past 2-to-12-month return character captures the cross-sectional variation. In regression (2), the tstat for returns on SMB covariance is 3.6829. Since $|3.6829|>1.96$, we can reject the hypothesis $\gamma_{SMB} = 0$ at 5\% significance level, which means SMB covariance has a significant positive risk premium on average. Thus, SMB covariance captures the cross-sectional variation. Also, the tstat for returns on UMD covariance is 4.6640. Since $|4.6640|>1.96$, we can reject the hypothesis $\gamma_{UMD} = 0$ at 5\% significance level, which means UMD covariance has a significant positive risk premium on average. Thus, UMD covariance captures the cross-sectional variation. Thus, from regression (1) and (2), we think characteristics and covariances both capture the cross-sectional variation in average returns and we can't tell which side is better. 
+
+In regression(3), we notice that the tstat for size character return is -1.9957. Since $|-1.9957|>1.96$, we can reject the hypothesis $\gamma_{size} = 0$ at 5\% significance level, which means size character has a significant negative risk premium on average. Thus, size character still captures the cross-sectional variation. Also, the tstat for past 2-to-12-month return  character return is 3.3423. Since $|3.3423|>1.96$, we can reject the hypothesis $\gamma_{ret212} = 0$ at 5\% significance level, which means past 2-to-12-month return characteristic has a significant positive risk premium on average. Thus, past 2-to-12-month return character still captures the cross-sectional variation. However, the tstat for returns on SMB covariance is only 0.1537. Since $|0.1537|<1.96$, we cannot reject the hypothesis $\gamma_{SMB} = 0$ at 5\% significance level, which means SMB covariance may not has a significant risk premium on average. Thus, SMB covariance cannot captures the cross-sectional variation. Also, the tstat for returns on UMD covariance is only 0.0699. Since $|0.0699|<1.96$, we cannot reject the hypothesis $\gamma_{UMD} = 0$ at 5\% significance level, which means UMD covariance may not has a significant risk premium on average. Thus, UMD covariance cannot captures the cross-sectional variation here. Using statistics in regression(3), we find out that size character and past 2-to-12-month return character can capture some cross-sectional variation but SMB and UMD covariances cannot capture the cross-variation anymore here. Thus, we conclude charasteristics better capture the cross-sectional variation than covariances. 
+
+Furthermore, we want to mention that since SMB and UMD are calculated by regressions, so they may suffer from some measurement errors, which may affect their performances in capturing cross-sectional variation. 
+
+
+\subsection{h}
+Using data after January, 1963, the tables below show the time series average, standard error and t-stat of $\gamma_{0}$, $\gamma_{M}$, $\gamma_{size}$, $\gamma_{ret212}$, $\gamma_{SMB}$ and $\gamma_{UMD}$ of three Fama-MacBeth cross-sectional regressions 1, 2, 3 as following.
+\[ (1) \quad R_{i} = \gamma_{0}+\gamma_{M}\beta_{iM}+\gamma_{size}ln(size)+\gamma_{ret212}(ret212)+\eta_{i1}, \]
+\[ (2) \quad R_{i} = \gamma_{0}+\gamma_{M}\beta_{iM}+\gamma_{SMB}\beta_{iSMB}+\gamma_{UMD}\beta_{iUMD}+\eta_{i2}, \]
+\[ (3) \quad R_{i} = \gamma_{0}+\gamma_{M}\beta_{iM}+\gamma_{size}ln(size)+\gamma_{ret212}(ret212)+\gamma_{size}\beta_{iSMB}+\gamma_{UMD}\beta_{iUMD}+\eta_{i3}. \]
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+              & $\bar{\gamma_{0}}$    &  $se(\bar{\gamma_{0}})$   & $t(\bar{\gamma_{0}})$  & $\bar{\gamma_{M}}$     & $se(\bar{\gamma_{M}})$    & $t(\bar{\gamma_{M}})$   \\ \hline
+Regression (1) & 1.8647  & 0.2935 & 6.3536  & -0.8038 & 0.3455 & -2.3268 \\ \hline
+Regression(2)  & 1.5037  & 0.2563 & 5.8671  & -0.4181 & 0.3025 & -1.3820 \\ \hline
+Regression(3)  & 1.9970  & 0.3355 & 5.9522  & -0.6907 & 0.3920 & -1.7620 \\ \hline
+               & $\bar{\gamma_{size}}$    &  $se(\bar{\gamma_{size}})$   & $t(\bar{\gamma_{size}})$  & $\bar{\gamma_{ret212}}$     & $se(\bar{\gamma_{ret212}})$    & $t(\bar{\gamma_{ret212}})$   \\ \hline
+Regression(1)  & -0.0425 & 0.0327 & -1.2992 & 0.0090  & 0.0019 & 4.7890  \\ \hline
+Regression(2)  &         &        &         &         &        &         \\ \hline
+Regression(3)  & -0.0610 & 0.0536 & -1.1383 & 0.0103  & 0.0022 & 4.7292  \\ \hline
+                & $\bar{\gamma_{SMB}}$    &  $se(\bar{\gamma_{SMB}})$   & $t(\bar{\gamma_{SMB}})$  & $\bar{\gamma_{UMD}}$     & $se(\bar{\gamma_{UMD}})$    & $t(\bar{\gamma_{UMD}})$   \\ \hline
+Regression(1)  &         &        &         &         &        &         \\ \hline
+Regression(2)  & 0.2532  & 0.1300 & 1.9476  & 0.7367  & 0.1679 & 4.3888  \\ \hline
+Regression(3)  & -0.0857 & 0.2425 & -0.3534 & -0.0935 & 0.2271 & -0.4119 \\ \hline
+\end{tabular}
+\end{table}
+
+We still think characteristics better capture the cross sectional variation in average returns than covariances. However, we feel less strongly about our answer now since we found out the size character cannot capture the cross-sectional variation anymore. In regression (1) and (3), the absolute value of tstat for size character is less than 1.96, so we cannot reject the hypothesis $\gamma_{size} = 0$ at 5\% significance level, which means size character may not has a significant risk premium on average. Thus, the size character cannot capture the cross-sectional variation anymore. In regression (2), the tstat for returns on SMB covariance is less than 1.96. We cannot reject the hypothesis $\gamma_{SMB} = 0$ at 5\% significance level, which means SMB covariance may not has a significant risk premium on average. Thus, SMB covariance does not captures the cross-sectional variation. 
+
+The other estimated parameters here in regression(1),(2) and (3) exhibits the similar results of the parameter significant compare using the whole sample. Thus, we conclude that the past 2-to-12-month return characteristic still captures the cross-sectional variation successfully, so we still prefer characteristics model. In addition, we want to mention that since SMB and UMD are calculated by regressions, so they may suffer from some measurement errors, which may affect their performances in capturing cross-sectional variation. Here, we use smaller sample size, so measurement errors may be bigger than the previous question, which may affect the $\gamma$ estimation here. 
+
+
+\end{document}
+
